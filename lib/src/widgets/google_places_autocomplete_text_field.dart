@@ -110,7 +110,7 @@ class GooglePlacesAutoCompleteTextFormField extends StatefulWidget {
 
   /// The callback that is called as soon as the place details with the
   /// coordinates are received.
-  final void Function(Prediction prediction)?
+  final void Function(PlaceDetails placeDetails)?
       onPlaceDetailsWithCoordinatesReceived;
 
   /// Whether the coordinates should be fetched for the selected place as well.

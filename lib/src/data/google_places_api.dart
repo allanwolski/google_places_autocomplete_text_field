@@ -74,7 +74,7 @@ class GooglePlacesApi {
 
   /// Fetches the place details for the given [prediction] with the provided
   /// [googleAPIKey].
-  Future<Prediction?> fetchCoordinatesForPrediction({
+  Future<PlaceDetails?> fetchCoordinatesForPrediction({
     required Prediction prediction,
     required String googleAPIKey,
     String proxyUrl = '',
@@ -92,10 +92,7 @@ class GooglePlacesApi {
 
       final placeDetails = PlaceDetails.fromJson(response.data);
 
-      prediction.lat = placeDetails.result!.geometry!.location!.lat.toString();
-      prediction.lng = placeDetails.result!.geometry!.location!.lng.toString();
-
-      return prediction;
+      return placeDetails;
     } on DioException catch (e) {
       if (e.response != null) {
         debugPrint(

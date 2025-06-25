@@ -78,8 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   borderRadius: BorderRadius.circular(12),
                   child: child,
                 ),
-                onPlaceDetailsWithCoordinatesReceived: (prediction) {
-                  print('placeDetails${prediction.lng}');
+                onPlaceDetailsWithCoordinatesReceived: (details) {
+                  print(details.result?.geometry?.location?.lat);
                 },
                 onSuggestionClicked: (Prediction prediction) =>
                     _textController.text = prediction.description!,
