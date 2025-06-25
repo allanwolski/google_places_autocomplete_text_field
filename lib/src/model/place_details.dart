@@ -72,15 +72,15 @@ class Result {
 }
 
 class AddressComponents {
-  String? longName;
-  String? shortName;
+  String? longText;
+  String? shortText;
   List<String>? types;
 
-  AddressComponents({this.longName, this.shortName, this.types});
+  AddressComponents({this.longText, this.shortText, this.types});
 
   AddressComponents.fromJson(Map<String, dynamic> json) {
-    longName = json['long_name'];
-    shortName = json['short_name'];
+    longText = json['longText'];
+    shortText = json['shortText'];
     types = json['types'].cast<String>();
   }
 }
